@@ -1,0 +1,49 @@
+
+--TYPICAL WORKFLOW SOLO--
+MODIFY, ADD, COMMIT
+--GENERAL COMMANDS--
+git push origin master -- push to git hub
+git config --global user.name "King Kong"
+git config --global user.email "king-kong@gmail.com"
+git init -- intialized git in working directory
+git status -- shows current modified files and files in staging area
+git add filename1 filename2 -- add filename to stage
+git add . -- same as above but adds all files.
+git commit filename -m "message" -- commits changes
+git commit -a -m "new message" -- adds all tracked files to staging and commits them in one step (will miss untracked files)
+git commit -m "new message" -- will commit any files that have already been added to the staging area.
+git add . -- all files in current directory only
+git add -A -- adds all files including untracked
+git commit -m "some message" -- use after above add command
+git diff filename -- shows delta between dir file and staged file
+git log -- lists log of commits SHA's
+
+--BACKTRACKING COMMANDS--
+git show HEAD -- list current commit
+git reset HEAD filename -- removes changes/unstage file from staging area 
+git checkout HEAD filename -- undo your mistake, restores file in working directory to look as it did in your last commit. (shortcut would be git checkout -- filename)
+git reset SHA -- resets to specific HEAD
+git reset filename -- removes file from staging
+ 
+--BRANCHING--
+git branch -- shows current branch that you are on
+git branch new_branch -- creates new branch
+git checkout branch_name -- switch to a specific branch
+git merge branch_name -- merges changes in branch with master
+git branch -d branch_name: Deletes the branch specified.
+git branch -D branch_name: Deletes the branch specified if a merge has not been done.
+
+--TEAMWORK (REMOTES)--
+git clone remote_location clone_name -- Tells Git where to go to find the remote. This could be a web address, or a filepath, Once cloned name origin is given to remote
+git remote -v -- shows list of Git project's remotes
+git fetch origin -- easy way to see if changes have been made to the remote and bring the changes down to your local copy but are not commited to your local copy. Use git merge origin/master to integrate origin/master into your local branch.
+merge origin/master -- to integrate origin/master into your local branch.
+git push origin your_branch_name -- will push your branch up to the remote, origin where branch can be reviewed and then merged into master branch.
+
+--TYPICAL GIT COLLABORATIVE WORKFLOW--
+
+    1. Fetch and merge changes from the remote
+    2. Create a branch to work on a new project feature
+    3. Develop the feature on your branch and commit your work
+    4. Fetch and merge from the remote again (in case new commits were made while you were working)
+    5. Push your branch up to the remote for review
