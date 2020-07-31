@@ -2,6 +2,8 @@
 --TYPICAL WORKFLOW SOLO--
 MODIFY, ADD, COMMIT
 --GENERAL COMMANDS--
+** If you cannot log into githum clear creds cache from windows credentials manager
+git remote -v -- view remote connections
 git push origin master -- push to git hub
 git config --global user.name "King Kong"
 git config --global user.email "king-kong@gmail.com"
@@ -47,3 +49,67 @@ git push origin your_branch_name -- will push your branch up to the remote, orig
     3. Develop the feature on your branch and commit your work
     4. Fetch and merge from the remote again (in case new commits were made while you were working)
     5. Push your branch up to the remote for review
+
+--COMMAND LINE--
+
+--NAVIGATION--
+    Options modify the behavior of commands:
+        ls -a lists all contents of a directory, including hidden files and directories
+        ls -l lists all contents in long format
+        ls -t orders files and directories by the time they were last modified
+        Multiple options can be used together, like ls -alt
+    From the command line, you can also copy, move, and remove files and directories:
+        cp copies files
+        mv moves and renames files
+        rm removes files
+        rm -r removes directories
+    Wildcards are useful for selecting groups of files and directories
+
+--REDIRECTION--
+    Redirection reroutes standard input, standard output, and standard error.
+
+    The common redirection commands are:
+        > redirects standard output of a command to a file, overwriting previous content.
+        >> redirects standard output of a command to a file, appending new content to old content.
+        < redirects standard input to a command.
+        | redirects standard output of a command to another command.
+
+    A number of other commands are powerful when combined with redirection commands:
+        sort: sorts lines of text alphabetically.
+        uniq: filters duplicate, adjacent lines of text.
+        grep: searches for a text pattern and outputs it.
+        sed : searches for a text pattern, modifies it, and outputs it.
+
+--ENVIRONMENT--
+    The environment refers to the preferences and settings of the current user.
+
+    The nano editor is a command line text editor used to configure the environment.
+
+    ~/.bash_profile is where environment settings are stored. You can edit this file with nano.
+
+    environment variables are variables that can be used across commands and programs and hold information about the environment.
+        export VARIABLE="Value" sets and exports an environment variable.
+        USER is the name of the current user.
+        PS1 is the command prompt.
+        HOME is the home directory. It is usually not customized.
+        PATH returns a colon separated list of file paths. It is customized in advanced cases.
+        env returns a list of environment variables.
+
+--BASH SCRIPTING--
+    Any command that can be run in the terminal can be run in a bash script.
+    Variables are assigned using an equals sign with no space (greeting="hello").
+    Variables are accessed using a dollar sign (echo $greeting).
+    Conditionals use if, then, else, fi syntax.
+    Three types of loops can be used: for, while, and until.
+    Bash scripts use a unique set of comparison operators:
+        Equal: -eq
+        Not equal: -ne
+        Less than or equal: -le
+        Less than: -lt
+        Greater than or equal: -ge
+        Greater than: -gt
+        Is null: -z
+    Input arguments can be passed to a bash script after the script name, separated by spaces (myScript.sh “hello” “how are you”).
+    Input can be requested from the script user with the read keyword.
+    Aliases can be created in the .bashrc or .bash_profile using the alias keyword.
+
